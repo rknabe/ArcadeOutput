@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.knabesoft</groupId>
-    <artifactId>blinkstick</artifactId>
+    <groupId>com.rkade</groupId>
+    <artifactId>outputs</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -19,14 +19,9 @@
             <version>0.7.0</version>
         </dependency>
         <dependency>
-            <groupId>net.compartmental.code</groupId>
-            <artifactId>minim</artifactId>
-            <version>2.2.2</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -60,7 +55,7 @@
                     <transformers>
                         <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>com.knabesoft.blinkstick.Main</mainClass>
+                            <mainClass>com.rkade.outputs.Main</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>
@@ -78,20 +73,20 @@
                         </goals>
                         <configuration>
                             <headerType>gui</headerType>
-                            <outfile>target/blinkstick.exe</outfile>
-                            <jar>target/blinkstick-1.0-shaded.jar</jar>
-                            <errTitle>blinkstick</errTitle>
+                            <outfile>target/ArcadeOutputs.exe</outfile>
+                            <jar>target/outputs-1.0-shaded.jar</jar>
+                            <errTitle>outputs</errTitle>
                             <icon>led.ico</icon>
                             <classPath>
-                                <mainClass>com.knabesoft.blinkstick.Main</mainClass>
+                                <mainClass>com.rkade.outputs.Main</mainClass>
                                 <addDependencies>false</addDependencies>
                                 <preCp>anything</preCp>
                             </classPath>
                             <singleInstance>
-                                <mutexName>com.knabesoft.blinkstick</mutexName>
+                                <mutexName>com.rkade.outputs</mutexName>
                             </singleInstance>
                             <jre>
-                                <path>C:\Program Files\Java\jdk16\bin</path>
+                                <path>C:\Program Files\Java\jdk-20\bin</path>
                                 <bundledJre64Bit>true</bundledJre64Bit>
                                 <minVersion>8.0.0</minVersion>
                                 <maxVersion>21.0.0</maxVersion>
@@ -103,13 +98,13 @@
                             <versionInfo>
                                 <fileVersion>1.0.0.0</fileVersion>
                                 <txtFileVersion>txt file version?</txtFileVersion>
-                                <fileDescription>BlinkStick</fileDescription>
-                                <copyright>KnabeSoft</copyright>
+                                <fileDescription>ArcadeOutputs</fileDescription>
+                                <copyright>RKade</copyright>
                                 <productVersion>1.0.0.0</productVersion>
                                 <txtProductVersion>txt product version</txtProductVersion>
-                                <productName>BlinkStick</productName>
-                                <internalName>BlickStick</internalName>
-                                <originalFilename>blinkstick.exe</originalFilename>
+                                <productName>ArcadeOutputs</productName>
+                                <internalName>ArcadeOutputs</internalName>
+                                <originalFilename>ArcadeOutputs.exe</originalFilename>
                             </versionInfo>
                         </configuration>
                     </execution>

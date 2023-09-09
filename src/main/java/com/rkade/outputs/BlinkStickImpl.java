@@ -1,4 +1,4 @@
-package com.knabesoft.blinkstick;
+package com.rkade.outputs;
 
 import org.hid4java.HidDevice;
 import org.hid4java.event.HidServicesEvent;

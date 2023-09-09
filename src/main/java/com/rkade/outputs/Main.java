@@ -1,4 +1,4 @@
-package com.knabesoft.blinkstick;
+package com.rkade.outputs;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -6,7 +6,7 @@ import java.awt.image.DataBufferInt;
 
 public final class Main {
 
-    public static void main(String... args) {
+    public static void main1(String... args) {
         try {
             Usb usb = new Usb();
             final BlinkStick blinkStick = usb.findFirstBlinkStick();
@@ -19,8 +19,7 @@ public final class Main {
                 Thread hook = new Thread(() -> clearAll(blinkStick));
                 Runtime.getRuntime().addShutdownHook(hook);
 
-                SoundEnergyBeatDetection beatDetection = new SoundEnergyBeatDetection(blinkStick);
-                beatDetection.setup();
+
                // do {
               //      Thread.sleep(5000);
                // }
@@ -33,7 +32,7 @@ public final class Main {
        // System.exit(1);
     }
 
-    public static void main1(String... args) {
+    public static void main(String... args) {
         try {
             Usb usb = new Usb();
             final BlinkStick blinkStick = usb.findFirstBlinkStick();

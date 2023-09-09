@@ -1,4 +1,4 @@
-package com.knabesoft.blinkstick;
+package com.rkade.outputs;
 
 enum ReportId {
     ModeReportId(4);

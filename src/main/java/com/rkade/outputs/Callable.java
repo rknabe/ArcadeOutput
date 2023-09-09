@@ -1,4 +1,4 @@
-package com.knabesoft.blinkstick;
+package com.rkade.outputs;
 
 import java.io.IOException;
 
