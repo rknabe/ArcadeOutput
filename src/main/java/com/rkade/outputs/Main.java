@@ -9,7 +9,7 @@ public final class Main {
     public static void main1(String... args) {
         try {
             Usb usb = new Usb();
-            final BlinkStick blinkStick = usb.findFirstBlinkStick();
+            final PacLed blinkStick = usb.findFirstPacLed();
             if (blinkStick != null) {
                 String desc = blinkStick.getProductDescription();
                 System.out.println(desc);
@@ -20,22 +20,22 @@ public final class Main {
                 Runtime.getRuntime().addShutdownHook(hook);
 
 
-               // do {
-              //      Thread.sleep(5000);
-               // }
-               // while (!beatDetection.getExit());
+                // do {
+                //      Thread.sleep(5000);
+                // }
+                // while (!beatDetection.getExit());
             }
         } catch (Throwable t) {
             t.printStackTrace();
             System.exit(1);
         }
-       // System.exit(1);
+        // System.exit(1);
     }
 
     public static void main(String... args) {
         try {
             Usb usb = new Usb();
-            final BlinkStick blinkStick = usb.findFirstBlinkStick();
+            final PacLed blinkStick = usb.findFirstPacLed();
             if (blinkStick != null) {
                 String desc = blinkStick.getProductDescription();
                 System.out.println(desc);
@@ -73,7 +73,7 @@ public final class Main {
         System.exit(1);
     }
 
-    private static void clearAll(BlinkStick blinkStick) {
+    private static void clearAll(PacLed blinkStick) {
         System.out.println("clearing");
         blinkStick.setAllColors((byte) 32, (byte) 0, (byte) 0, (byte) 0);
         try {

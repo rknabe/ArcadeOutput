@@ -1,9 +1,8 @@
 package com.rkade.outputs;
 
 public class Device {
-    //HidServicesEvent{hidDevice=HidDevice [path=\\?\hid#vid_20a0&pid_41e5#6&17dee3c3&0&0000#{4d1e55b2-f16f-11cf-88cb-001111000030}, vendorId=0x20a0, productId=0x41e5, serialNumber=BS025149-3.1, releaseNumber=0x203, manufacturer=Agile Innovative Ltd, product=BlinkStick Flex, usagePage=0xffffff00, usage=0x1, interfaceNumber=-1]}
-    final static int BlinkStickVendorId = 0x20a0;
-    final static int BlinkStickProductName = 0x41e5;
+    final static int UltimarcPacLedVendorId = 0XD209;
+    final static int UltimarcPacLedProductId = 0x1500;
     private final String manufacturer;
     private final String productName;
     private final String serialNumber;
@@ -18,8 +17,8 @@ public class Device {
         this.productId = productId;
     }
 
-    public boolean isBlinkStick() {
-        return vendorId == BlinkStickVendorId && productId == BlinkStickProductName;
+    public boolean isPacLed() {
+        return vendorId == UltimarcPacLedVendorId && productId == UltimarcPacLedProductId;
     }
 
     @Override

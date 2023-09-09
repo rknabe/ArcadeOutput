@@ -3,7 +3,7 @@ package com.rkade.outputs;
 import org.hid4java.HidServicesListener;
 import org.hid4java.event.HidServicesEvent;
 
-public interface BlinkStick extends ColorChangeListener, HidServicesListener {
+public interface PacLed extends ColorChangeListener, HidServicesListener {
     Mode getMode();
 
     void setMode(Mode mode);

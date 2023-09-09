@@ -5,10 +5,10 @@ import org.hid4java.event.HidServicesEvent;
 
 import java.util.Random;
 
-public class BlinkStickImpl implements BlinkStick {
+public class PacLedImpl implements PacLed {
     private final HidDevice device;
 
-    BlinkStickImpl(HidDevice device) throws Exception {
+    PacLedImpl(HidDevice device) throws Exception {
         this.device = device;
         boolean isOpen = device.open();
         if (!isOpen) {

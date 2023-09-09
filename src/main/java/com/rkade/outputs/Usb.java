@@ -23,15 +23,16 @@ public final class Usb {
         hidServices.start();
     }
 
-    public BlinkStick findFirstBlinkStick() throws Exception {
+    public PacLed findFirstPacLed() throws Exception {
         // Provide a list of attached devices
         for (HidDevice hidDevice : hidServices.getAttachedHidDevices()) {
             //System.out.println(hidDevice);
-            Device device = new Device(hidDevice.getManufacturer(), hidDevice.getProduct(), hidDevice.getSerialNumber(), hidDevice.getVendorId(), hidDevice.getProductId());
-            if (device.isBlinkStick()) {
-                BlinkStick blinkStick = new BlinkStickImpl(hidDevice);
-                hidServices.addHidServicesListener(blinkStick);
-                return blinkStick;
+            Device device = new Device(hidDevice.getManufacturer(), hidDevice.getProduct(), hidDevice.getSerialNumber(),
+                    hidDevice.getVendorId(), hidDevice.getProductId());
+            if (device.isPacLed()) {
+                PacLed pacLed = new PacLedImpl(hidDevice);
+                hidServices.addHidServicesListener(pacLed);
+                return pacLed;
             }
         }
         return null;
